@@ -1,0 +1,6 @@
+/data/
+.pbi/
+__pycache__/
+*.py[cod]
+*.twbr
+*.twb~
