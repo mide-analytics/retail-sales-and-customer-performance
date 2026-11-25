@@ -1,0 +1,40 @@
+-- DAX measures exported from the Power BI semantic model, grouped by table.
+-- Create each one as a New measure on the table named in its section header.
+
+-- ===== Table: Sales =====
+Gross sales = SUM('Sales'[Gross])
+-- format: £#,0.00
+
+Cancellation value = SUM('Sales'[Cancellations])
+-- format: £#,0.00
+
+Net recorded sales = [Gross sales] - [Cancellation value]
+-- format: £#,0.00
+
+Purchase invoices = SUM('Sales'[Orders])
+-- format: #,0
+
+Customer ID coverage = DIVIDE(SUM('Sales'[Known Lines]), SUM('Sales'[Purchase Lines]))
+-- format: 0.0%
+
+-- ===== Table: Products =====
+Stock code gross sales = SUM('Products'[Product Gross])
+-- format: £#,0.00
+
+-- ===== Table: Markets =====
+Market gross sales = SUM('Markets'[Market Gross])
+-- format: £#,0.00
+
+-- ===== Table: Repeat =====
+Identified purchasers = SUM('Repeat'[Purchasers])
+-- format: #,0
+
+Repeat purchasers = SUM('Repeat'[Returning])
+-- format: #,0
+
+Repeat purchase rate = DIVIDE([Repeat purchasers], [Identified purchasers])
+-- format: 0.0%
+
+-- ===== Table: Cohorts =====
+Cohort retention = DIVIDE(SUM('Cohorts'[Active]), SUM('Cohorts'[Cohort Size]))
+-- format: 0.0%

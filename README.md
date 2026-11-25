@@ -4,12 +4,14 @@ This portfolio project analyses real invoice activity from a UK-based online ret
 
 **£18.58m in net recorded sales** across the 24 complete months. Gross sales grew 1.7% in the second year, but higher cancellation value absorbed about 71% of the increase. Among identified purchasers, 71.8% placed at least two orders.
 
-## Open the Online Retail II project
+## View the Online Retail II project
 
-| Deliverable | Open |
+The Power BI and Tableau project files are kept private and are not in this repository. The interactive dashboards will be published separately for viewing; the screenshots and build notes here document them.
+
+| Deliverable | View |
 | --- | --- |
-| Power BI | [Retail Sales and Customer Performance](powerbi/Retail%20Sales%20and%20Customer%20Performance.pbip) |
-| Tableau | [Retail Sales and Customer Performance](tableau/Retail%20Sales%20and%20Customer%20Performance.twbx) |
+| Power BI | [Sales dashboard screenshot](docs/screenshots/powerbi-sales.png) · [Build notes, DAX and Power Query](powerbi/README.md) |
+| Tableau | [Retention dashboard screenshot](docs/screenshots/tableau-retention.png) · [Workbook build notes](tableau/README.md) |
 | Written analysis | [Online retail trading and customer insights](docs/online-retail-insights.md) |
 
 ![Power BI sales dashboard showing gross sales, cancellation value, net recorded sales, and monthly trends](docs/screenshots/powerbi-sales.png)
@@ -101,8 +103,10 @@ Source attribution: Daqing Chen (2012), Online Retail II, UCI Machine Learning R
 
 Both reports cover sales performance, the top ten stock codes and invoice countries by gross sales, and customer retention. They use the 24 complete months from December 2009 through November 2011. The stock-code ranking includes non-merchandise charges. Each point on the retention trend divides active customers by the total size of the cohorts that have reached that month.
 
-- Open `powerbi/Retail Sales and Customer Performance.pbip` in Power BI Desktop and select Refresh on the initial open to load the aggregates embedded in the model. The cohort selector filters the retention chart. The repeat-purchase cards cover the full reporting period.
-- Open `tableau/Retail Sales and Customer Performance.twbx` in Tableau Desktop. The packaged workbook includes its aggregate Hyper extract. Its retention trend combines the eligible cohorts for each elapsed month.
+- Power BI ([build notes](powerbi/README.md), [DAX measures](powerbi/Model.dax)): the model embeds the monthly, product, market and cohort aggregates. The cohort selector filters the retention chart. The repeat-purchase cards cover the full reporting period.
+- Tableau ([build notes](tableau/README.md)): the workbook packages an aggregate Hyper extract. Its retention trend combines the eligible cohorts for each elapsed month.
+
+The generated `.pbip` project and `.twbx` workbook are kept private and Git-ignored.
 
 After building the SQLite model, run these commands from this project directory to rebuild the reports. Install the `tableauhyperapi` Python package before running the Tableau builder. The builders regenerate the report definitions, so run them on a clean copy if you have edited the reports in Desktop.
 

@@ -42,4 +42,4 @@ Repeat rate counts purchasers who returned at any point in the reporting window.
 
 The source has **1,067,371 invoice lines** across two overlapping sheets. The model retains **1,033,036 distinct lines** and preserves every source row in staging. Exact matching uses all eight fields. Some repeated lines may be legitimate because the workbook has no line identifier. December 2011 is partial and excluded from the comparisons above. Changes are calculated from unrounded values.
 
-[Power BI report](../powerbi/Retail%20Sales%20and%20Customer%20Performance.pbip) · [Tableau workbook](../tableau/Retail%20Sales%20and%20Customer%20Performance.twbx) · [Data cleaning and rebuild instructions](../README.md)
+[Power BI build notes](../powerbi/README.md) · [Tableau build notes](../tableau/README.md) · [Data cleaning and rebuild instructions](../README.md)
